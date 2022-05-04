@@ -5,8 +5,14 @@ namespace Exercises
     {
         public bool IsPangram(string input)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            bool result = true;
+            string loweredInput = input.ToLower();
+            string englishLetters = "abcdefghijklmnopqrstuvwxyz";
+            for(int i = 0; i < englishLetters.Length; i++)
+            {
+                result = result && loweredInput.Contains(englishLetters[i]);
+            }
+            return result;
         }
     }
 }
