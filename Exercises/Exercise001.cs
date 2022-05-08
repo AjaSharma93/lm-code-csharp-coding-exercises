@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using Exercises.Models;
 
@@ -8,6 +9,7 @@ namespace Exercises
     {
         public string CapitalizeWord(string word)
         {
+            if(string.IsNullOrEmpty(word)) return "";
             // Replace the exception statement below with your code!
             string result = "";
             if(word != null && word!="")
@@ -20,8 +22,8 @@ namespace Exercises
         public string GenerateInitials(string firstName, string lastName)
         {
             string result = "";
-            if(firstName != null && firstName.Length > 0) result = result + firstName[0];
-            if(lastName != null && lastName.Length > 0) result = result + "." + lastName[0];
+            if(!string.IsNullOrEmpty(firstName)) result = result + firstName[0];
+            if(!string.IsNullOrEmpty(lastName)) result = result + "." + lastName[0];
             return result;
         }
 
@@ -42,13 +44,7 @@ namespace Exercises
         public int CountLinuxUsers(List<User> users)
         {
             // Replace the exception statement below with your code!
-            int countUsers = 0;
-            users.ForEach(user =>
-            {
-                if (user.Type == "Linux")
-                    countUsers++;
-            });
-            return countUsers;
+            return users.Aggregate(0,(acc, user) => (user.Type == "Linux")?(acc+1):acc);
         }
     }
 }

@@ -1,18 +1,15 @@
 ﻿using System;
+using System.Linq;
 namespace Exercises
 {
     public class Exercise005
     {
         public bool IsPangram(string input)
         {
-            bool result = true;
+            if (string.IsNullOrEmpty(input)) return false;
             string loweredInput = input.ToLower();
             string englishLetters = "abcdefghijklmnopqrstuvwxyz";
-            for(int i = 0; i < englishLetters.Length; i++)
-            {
-                result = result && loweredInput.Contains(englishLetters[i]);
-            }
-            return result;
+            return englishLetters.All((alphabet)=>loweredInput.Contains(alphabet));
         }
     }
 }

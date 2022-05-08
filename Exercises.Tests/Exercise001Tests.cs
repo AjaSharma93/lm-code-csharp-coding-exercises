@@ -18,6 +18,8 @@ namespace Exercises.Tests
         [Test]
         public void CapitalizeWord_Should_Return_The_First_Letter_Capitalized()
         {
+            Exercise001.CapitalizeWord(null).Should().Be("");
+            Exercise001.CapitalizeWord("").Should().Be("");
             Exercise001.CapitalizeWord("hello").Should().Be("Hello");
             Exercise001.CapitalizeWord("oh no, bears!!").Should().Be("Oh no, bears!!");
             Exercise001.CapitalizeWord("the quick fox").Should().Be("The quick fox");
@@ -26,6 +28,9 @@ namespace Exercises.Tests
         [Test]
         public void GenerateInitials_Should_Return_Correct_Initials()
         {
+            Exercise001.GenerateInitials(null,"").Should().Be("");
+            Exercise001.GenerateInitials(null,"Sharma").Should().Be(".S");
+            Exercise001.GenerateInitials("Aja","").Should().Be("A");
             Exercise001.GenerateInitials("Frederic", "Bonneville").Should().Be("F.B");
             Exercise001.GenerateInitials("James", "Bond").Should().Be("J.B");
         }
@@ -42,6 +47,7 @@ namespace Exercises.Tests
         [Test]
         public void Reverse_Should_Return_Correctly_Reversed_String()
         {
+            Exercise001.Reverse("").Should().Be("");
             Exercise001.Reverse("foo").Should().Be("oof");
             Exercise001.Reverse("why would you even want to do this?").Should().Be("?siht od ot tnaw neve uoy dluow yhw");
         }
