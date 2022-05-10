@@ -6,13 +6,11 @@ namespace Exercises
     {
         public bool IsFromManchester(Person person)
         {
-            // Replace the exception statement below with your code!
             return person.City == "Manchester";
         }
 
         public bool CanWatchFilm(Person person, int ageLimit)
         {
-            // Replace the exception statement below with your code!
             return person.Age > ageLimit;
         }
     }

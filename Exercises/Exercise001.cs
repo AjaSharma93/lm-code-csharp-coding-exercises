@@ -9,14 +9,7 @@ namespace Exercises
     {
         public string CapitalizeWord(string word)
         {
-            if(string.IsNullOrEmpty(word)) return "";
-            // Replace the exception statement below with your code!
-            string result = "";
-            if(word != null && word!="")
-            {
-                result = word[0].ToString().ToUpper()+word.Substring(1);
-            }
-            return result;
+            return (string.IsNullOrEmpty(word))?word:(char.ToUpper(word[0]) + word.Substring(1));
         }
 
         public string GenerateInitials(string firstName, string lastName)
@@ -29,13 +22,11 @@ namespace Exercises
 
         public double AddVat(double originalPrice, double vatRate)
         {
-            // Replace the exception statement below with your code!
             return Math.Round((1 + vatRate/100) * originalPrice,2);
         }
 
         public string Reverse(string sentence)
         {
-            // Replace the exception statement below with your code!
             char[] chars = sentence.ToCharArray();
             Array.Reverse(chars);
             return new string(chars);
@@ -43,7 +34,6 @@ namespace Exercises
 
         public int CountLinuxUsers(List<User> users)
         {
-            // Replace the exception statement below with your code!
             return users.Aggregate(0,(acc, user) => (user.Type == "Linux")?(acc+1):acc);
         }
     }
